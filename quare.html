@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正方体</title>
+		<style>
+			.box{
+				cursor: pointer;
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				top: 50%;
+				margin-top: -100px;
+				left: 50%;
+				margin-left: -100px;
+				transform-style: preserve-3d;/*形成3d的正方形*/
+				animation: name 10s infinite linear;/*运动*/
+				
+			}
+			.box div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #bcbcbc;
+				position: absolute;
+				transition: all 2s;/*张开过度过程*/
+			}
+			/*小正方形*/
+			.box p{
+				width: 100px;
+				height: 100px;
+				border: 1px solid rgb(255,117,90);
+				position: absolute;
+				top: 50%;
+				margin-top: -50px;
+				left: 50%;
+				margin-left: -50px;
+				transition: all 2s;
+			}
+			.box p:nth-child(7){/*上*/
+				border-radius: 50%;
+				transform: translateZ(50px);
+				/*background-color: rgb(0,250,194);*/
+				background-color: #f00;
+			}
+			.box p:nth-child(8){/*下*/
+				border-radius: 50%;
+				transform: translateZ(-50px);
+				/*background-color:mediumorchid;*/
+				background-color: #f00;
+			}
+			.box p:nth-child(9){/*左*/
+				border-radius: 50%;
+				transform: rotateY(90deg)  translateX(50px);
+				background-color:rgb(30,254,252);
+			}
+			.box p:nth-child(10){/*右*/
+				border-radius: 50%;
+				transform:  rotateY(90deg) translateX(-50px);
+				background-color: rgb(30,254,252);
+				}
+			.box p:nth-child(11){/*上*/
+				border-radius: 50%;
+				transform: rotateX(90deg) translateY(50px);
+				background-color: rgb(0,250,194);
+			}
+			.box p:nth-child(12){/*下*/
+				border-radius: 50%;
+				transform: rotateX(90deg) translateY(-50px);
+				background-color: rgb(0,250,194);
+			}
+			/*鼠标移上合拢*/
+			.box:hover p:nth-child(7){/*上*/
+				border-radius: 0%;
+				transform: translateZ(50px);
+				/*background-color: rgb(0,250,194);*/
+				background-color: #f00;
+			}
+			.box:hover p:nth-child(8){/*下*/
+				border-radius: 0%;
+				transform: translateZ(-50px);
+				/*background-color:mediumorchid;*/
+				background-color: #f00;
+			}
+			.box:hover p:nth-child(9){/*左*/
+				border-radius: 0%;
+				transform:translateX(50px) rotateY(90deg)  ;
+				background-color: rgb(30,254,252);
+			}
+			.box:hover p:nth-child(10){/*右*/
+				border-radius: 0%;
+				transform: translateX(-50px) rotateY(90deg) ;
+				background-color: rgb(30,254,252);
+				}
+			.box:hover p:nth-child(11){/*上*/
+				border-radius: 0%;
+				transform:translateY(50px) rotateX(90deg) ;
+				background-color: rgb(0,250,194);
+			}
+			.box:hover p:nth-child(12){/*下*/
+				border-radius: 0%;
+				transform:translateY(-50px) rotateX(90deg) ;
+				background-color: rgb(0,250,194);
+			}
+			
+			/*大正方体*/
+			.box div:nth-child(1){/*上*/
+				transform: translateZ(100px);
+				/*background-color: rgb(0,250,194);*/
+				background-color: rgba(0,0,0,0.2);
+			}
+			.box div:nth-child(2){/*下*/
+				transform: translateZ(-100px);
+				/*background-color:mediumorchid;*/
+				background-color: rgba(0,0,0,0.1);
+			}
+			.box div:nth-child(3){/*左*/
+				transform: translateX(100px) rotateY(90deg) ;
+				background-color: rgba(0,0,0,0.2);
+			}
+			.box div:nth-child(4){/*右*/
+				transform: translateX(-100px)  rotateY(90deg);
+				background-color: rgba(0,0,0,0.1);
+				}
+			.box div:nth-child(5){/*上*/
+				transform: translateY(100px) rotateX(90deg);
+				background-color: rgba(0,0,0,0.2);
+			}
+			.box div:nth-child(6){/*下*/
+				transform: translateY(-100px) rotateX(90deg);
+				background-color: rgba(0,0,0,0.1);
+			}
+			
+			/*张开*/
+			.box:hover div:nth-child(1){/*上*/
+				transform: translateZ(200px);
+				/*background-color: rgb(0,250,194);*/
+				background-color: rgba(0,0,0,0.2);
+			}
+			.box:hover div:nth-child(2){/*下*/
+				transform: translateZ(-200px);
+				/*background-color:mediumorchid;*/
+				background-color: rgba(0,0,0,0.1);
+			}
+			.box:hover div:nth-child(3){/*左*/
+				transform: translateX(200px) rotateY(90deg) ;
+				background-color: rgba(0,0,0,0.2);
+			}
+			.box:hover div:nth-child(4){/*右*/
+				transform: translateX(-200px)  rotateY(90deg);
+				background-color: rgba(0,0,0,0.1);
+				}
+			.box:hover div:nth-child(5){/*上*/
+				transform: translateY(200px) rotateX(90deg);
+				background-color: rgba(0,0,0,0.2);
+			}
+			.box:hover div:nth-child(6){/*下*/
+				transform: translateY(-200px) rotateX(90deg);
+				background-color: rgba(0,0,0,0.1);
+			}
+			
+			@keyframes name{
+				from{transform: rotateX(0deg) rotateY(0deg);}
+				to{transform: rotateX(360deg) rotateY(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			
+		</div>
+	</body>
+</html>
